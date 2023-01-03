@@ -1,1 +1,1 @@
-# gwas_pipeline
+# GWAS Pipeline for Colorectal Cancer Study
