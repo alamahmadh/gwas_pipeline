@@ -79,8 +79,11 @@
 `bcftools norm --check-ref e -f ~/GRCh37/human_g1k_v37.fasta results/trial.vcf.gz -Ou -o /dev/null`
 
 `for CHR in {1..22}; do bcftools norm -m -any results/vcf_per_chr/chr${CHR}.trial.vcf.gz -Oz -o results/vcf_per_chr_temp/chr${CHR}.split_multiallelic_trial.vcf.gz; done`
+
 'for CHR in {1..22}; do echo ${CHR} chr${CHR}; done >> chr_names.txt`
+
 `for CHR in {1..22}; do bcftools annotate --rename-chrs chr_names.txt results/vcf_per_chr_temp/chr${CHR}trial_split_multiallelic.vcf.gz -Oz -o results/vcf_per_chr_temp/chr${CHR}.trial.vcf.gz; done`
 
 `bcftools concat results/vcf_per_chr_conform/trial.chr{1..22}.vcf.gz -o results/imputed_trial.vcf.gz -Oz`
+
 `for i in {1..22}; do unzip chr_$i.zip && rm chr_$i.zip; done`
