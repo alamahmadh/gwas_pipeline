@@ -80,7 +80,7 @@
 
 `for CHR in {1..22}; do bcftools norm -m -any results/vcf_per_chr/chr${CHR}.trial.vcf.gz -Oz -o results/vcf_per_chr_temp/chr${CHR}.split_multiallelic_trial.vcf.gz; done`
 
-'for CHR in {1..22}; do echo ${CHR} chr${CHR}; done >> chr_names.txt`
+`for CHR in {1..22}; do echo ${CHR} chr${CHR}; done >> chr_names.txt`
 
 `for CHR in {1..22}; do bcftools annotate --rename-chrs chr_names.txt results/vcf_per_chr_temp/chr${CHR}trial_split_multiallelic.vcf.gz -Oz -o results/vcf_per_chr_temp/chr${CHR}.trial.vcf.gz; done`
 
