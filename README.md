@@ -3,7 +3,7 @@
 ## PLINK QC
 
 ## Missing rate per sample, impose 95% call rate
-`plink --file PLINK/Smokescreen_Biorealm_p9-10 --mind 0.05 --recode --out results/crc`
+`plink --file PLINK/<your_sample> --mind 0.05 --recode --out results/crc`
 
 ## Missing rate per snp, impose 95% call rate
 `plink --file results/crc --geno 0.05 --recode --out results/crc`
